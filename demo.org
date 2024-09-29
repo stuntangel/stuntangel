@@ -179,13 +179,13 @@ The same is also true for the KCBS and Mermin Pentagram, where two KCBS are need
 ** Monogamy Relationships
 By turning to graph theory, as shown in [1], one is able to see how each quantum game is represented in graph form. Here, the top graph, referred to as K3,3, represents the Mermin Peres Magic Square. It can be vetex decomposed in 4 different ways (simililiarly to the 4 CHSH correlation arrays found in one Mermin Square), such that it creates two subgraphs, representing the CHSH system.
 
-file:/home/ryan/Documents/blog/1/K33.png
+file:./K33.png
 
 The same is also true for the Mermin Pentagram. It is more obvious to see how two pentagons, the KCBS Pentagram, can be found around the Pentagram, which is referred to as K5, represinging the Mermin Pentagram. It can also be any path given by 5 edges, of which there are 7 more unique versions.
 
 #+attr_html: :width 300px
 #+attr_latex: :width 300px
-[[file:/home/ryan/Documents/blog/1/pentagram_in_pentagon.png]]
+[[file:./pentagram_in_pentagon.png]]
 
 Moreover, there is a monogomy relationship between the KCBS Pentagram / CHSH and the Mermin Pentagram / Mermin Square, such that Alice and Bob of the Mermin Square / Mermin Pentagram each play different versions of the CHSH system / KCBS Pentagram together, where the outcome helps decide what moves to play to successfully win at the Mermin square / Mermin Pentagram. This makes sense as the CHSH system / KCBS pentagram is commonly represented in a GHZ / Werner state, which is the entangled state shared in the Mermin Square / Mermin Pentagram. The monogamy relationship says that two separate CHSH system / KCBS pentagram games can be represented as a single GHZ / Werner state to give enough information as to tell what Mermin Square / Mermin Pentagram configuration one has. Thus, while the Mermin Peres Magic Square and Mermin Pentagram are more complicated than the CHSH system and KCBS pentagram, we can work with these simpler models and see how they can apply to expand our knowledge of the complicated problems.
 # For next chapter
