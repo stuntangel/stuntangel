@@ -1,0 +1,206 @@
+* Table of Contents:
+- Introduction
+- CHSH and Mermin Square
+- KCBS and Mermin Pentagram
+- Relating the two
+- Conclusion
+
+* Introduction
+The goal of this blog post is to provide an introduction to a few geometric quantum objects, demonstrate the ways in which they are analyzed and used, and elaborate on a relationship between them. The CHSH inequality's expectation values are defined explicitly to show nonlocality. The KCBS Pentagram and it's Kochen Specker act as a proof on demonstrating the no-go theorem. The Mermin Peres Magic Square Game and the Mermin Pentagram are briefly mentioned in explaining Hidden Variable theories, described through its connections with the previous three objects. This blog post is part 1 of 3 of a series describing the underpinnings of how the Mermin Square and Mermin Pentagram are related through the group M24. For this blog post I will only establish the objects at hand and the relationships between them.
+
+* CHSH and KCBS Pentagram :kcbs::chsh:
+** CHSH :chsh:
+The CHSH inequality is used to perform a Bell test, showing that the behaviour of entangled quantum systems is incompatible with local hidden variables, or that quantum mechanics really is random. Here we look at how expectation values differ when considering a classical versus quantum system, and that classical values can be exceeded with the use of quantum entanglement.
+#+BEGIN_SRC latex :results output file link replace :file chsh.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+\noindent Defining the CHSH quantity, where $A_1$, $A_2$, $B_1$, $B_2$ are of values $\{+1, -1\}$:\\
+\begin{align*}
+S = A_1(B_1-B_2)+A_2(B_1+B_2)
+\end{align*}
+By adding the possible outcomes, we can see that:\\
+\begin{align*}
+  -2 \geq \langle S \rangle \leq 2
+\end{align*}
+Now, having observables $A_1$, $A_2$, $B_1$, $B_2$ be 2x2 Hermitian matrices, each with $\pm1$ eigenvalues:\\
+\begin{align*}
+S &= A_1 \otimes (B_1-B_2) + A_2 \otimes (B_1 + B_2)\\
+\end{align*}
+Where one finds that:\\
+\begin{align*}
+\langle A_1 \otimes B_1 \rangle &= \langle A_2 \otimes B_1 \rangle = \langle A_2 \otimes B_2 \rangle = \frac{1}{\sqrt{2}}\\
+\langle A_1 \otimes B_2 \rangle &= -\frac{1}{\sqrt{2}}\\
+\end{align*}
+Plugging in these values:\\
+\begin{align*}
+\langle A_1B_1 \rangle - \langle A_1B_2 \rangle + \langle A_2B_1 \rangle + \langle A_2B_2 \rangle =  \pm 2\sqrt{2}\\
+\end{align*}
+which violates the CHSH inequality: $|\pm2\sqrt{2}|$ is greater than 2!\\
+#+END_SRC
+The CHSH is used as a signature of quantum nonlocality, whenever the expectation value exceeds 2 for a bipartite system, there is quantum entanglement across different objects at hand. In fact, the maximum expectation quantum value for a bipartite system, known as the Tsierlion Bound, is the quantum expectation value given by the CHSH experiment.
+** KCBS Pentagram :kcbs:
+The KCBS Pentagram is defined on a pentagon (or on the outer points of a pentagram) containing a 3 qubit pauli spin gate observable at each vetex. Here I describe a Kochen Specker configuration of the KCBS pentagram: it's goal is to show that quantum mechanics is inherently contextual; that is that one can not reliably describe measurement outcomes by their operator, or that one must choose a common basis of operators (context) of which to describe quantum theory. For the Kochen Specker example of the KCBS Pentagram, each co-measureable spin from a chain represents one of the vertices of the pentagon. The full set of co-measurable spins from each chain is necessary to demonstate the existence (or lack thereof) of a Hidden Variable model independent of a chosen basis.
+#+BEGIN_SRC latex :results output file link replace :file kcbs.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+F-chain:\begin{align*}\hat{F_1} &= (\tau_3 \otimes 1 \otimes 1), \hat{F_2}=(1 \otimes \tau_1 \otimes 1), \hat{F_3}=(1 \otimes 1 \otimes \tau_1)\\\hat{F_{12}} &=(\tau_3 \otimes \tau_1 \otimes 1), \hat{F_{13}} = (\tau_3 \otimes 1 \otimes \tau_1)\\\hat{F_{23}} &=(1 \otimes \tau_1 \otimes \tau_1), \hat{F_{123}} = (\tau_3 \otimes \tau_1 \otimes \tau_1)\\
+\end{align*}\\
+
+G-chain:\begin{align*}\hat{G_1} &= (\tau_1 \otimes 1 \otimes 1), \hat{G_2}=(1 \otimes \tau_3 \otimes 1), \hat{G_3}=(1 \otimes 1 \otimes \tau_1)\\\hat{G_{12}} &=(\tau_1 \otimes \tau_3 \otimes 1), \hat{G_{13}} = (\tau_1 \otimes 1 \otimes \tau_1)\\\hat{G_{23}} &=(1 \otimes \tau_3 \otimes \tau_1), \hat{G_{123}} = (\tau_1 \otimes \tau_3 \otimes \tau_1)\\
+\end{align*}\\
+
+H-chain:\begin{align*}\hat{H_1} &= (\tau_1 \otimes 1 \otimes 1), \hat{H_2}=(1 \otimes \tau_1 \otimes 1), \hat{H_3}=(1 \otimes 1 \otimes \tau_3)\\\hat{H_{12}} &=(\tau_1 \otimes \tau_1 \otimes 1), \hat{H_{13}} = (\tau_1 \otimes 1 \otimes \tau_3)\\\hat{H_{23}} &=(1 \otimes \tau_1 \otimes \tau_3), \hat{H_{123}} = (\tau_1 \otimes \tau_1 \otimes \tau_3)\\
+\end{align*}\\
+
+Q-chain:\begin{align*}\hat{Q_1} &= \hat{F_{123}} = (\tau_3 \otimes 1 \otimes 1), \hat{Q_2}= \hat{G_{123}} = (\tau_1 \otimes \tau_3 \otimes \tau_1),\\\hat{Q_3} &= \hat{H_{123}} = (\tau_1 \otimes \tau_1 \otimes \tau_3), \hat{Q_{12}} =(\tau_2 \otimes \tau_2 \otimes 1),\\\hat{Q_{13}} &= (\tau_2 \otimes 1 \otimes \tau_2), \hat{Q_{23}} =(1 \otimes \tau_2 \otimes \tau_2),\\\hat{Q_{123}} &= -(\tau_3 \otimes \tau_3 \otimes \tau_3)\\
+\end{align*}\\
+#+END_SRC
+
+#+BEGIN_SRC latex :results output file link replace :file kcbs_2.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+\noindent If we associate to each operator a unique Ising spin, e.g.:\\
+$\hat{F_{12}}=\hat{F_{1}}\hat{F_{2}}\rightarrow F_{12} = F_{1}F_{2},$ one finds $\dots$\\
+\\
+$\hat{Q_{123}}=\hat{F_{123}}\hat{G_{123}}\hat{H_{123}}=F_{1}F_{2}F_{3}G_{1}G_{2}G_{3}H_{1}H_{2}H_{3}$ with:\\
+\\
+$F_{2}=H_{2}, F_{3}=G_{3},G_{1}=H_{1}$\\
+\\
+One has for ising spins:\\
+$F_{2}H_{2}=1,F_{3}G_{3}=1, G_{1}H_{1}=1$\\
+\\
+producing:\\
+$\hat{Q_{123}}=\hat{-C_{123}}$ with $Q_{123}=C_{123}$\\
+\\
+a unique map from operators to observables implies:\\
+$\hat{Q_{123}}\rightarrow -C_1C_2C_3$\\
+\\
+#+END_SRC
+
+#+BEGIN_SRC latex :results output file link replace :file kcbs_3.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+\noindent However, by introducing one more Ising chain:\\
+\\
+C-Chain:\\\begin{align*}\hat{C_1} &= \hat{F_1} = (\tau_3 \otimes 1 \otimes 1), \hat{C_2}= \hat{G_2} = (1 \otimes \tau_3 \otimes 1),\\\hat{C_3} &= \hat{H_3} = (1 \otimes 1 \otimes \tau_3), \hat{C_{12}} =(\tau_3 \otimes \tau_3 \otimes 1),\\\hat{C_{13}} &= (\tau_3 \otimes 1 \otimes \tau_3), \hat{Q_{23}} =(1 \otimes \tau_3 \otimes \tau_3),\\\hat{C_{123}} &= -(\tau_3 \otimes \tau_3 \otimes \tau_3)\\
+\end{align*}
+\noindent one has:\\
+$F_1=C_1, G_2=C_2,H_3=C_3$\\
+\\
+such that:\\
+$\hat{Q_{123}}\rightarrow C_1C_2C_3$\\
+\\
+contradicting the earlier statement of $\hat{Q_{123}}\rightarrow -C_1C_2C_3$.\\
+
+\noindent Thus, there is no \textbf{invertible} map from observables to operators, showing a violation of the no-go 'theorem'.\\
+#+END_SRC
+
+* Mermin Square and Mermin Pentagram :mermin_square::mermin_pentagram:
+There is much to explore about the Mermin Square and Mermin Pentagram -- for now I will briefly mention them for the first blog -- they will become vital later.
+** Mermin Square :mermin_square:
+#+BEGIN_SRC latex :results output file link replace :file mermin_square.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+The Mermin-Peres Magic Square Game is a two-player game in which the players may agree on a prior strategy in advance, but cannot communicate once the game starts.
+\begin{enumerate}
+\item The referee picks a random row $\in \{1,2,3\}$ and a random column c $\in \{1,2,3\}$\\
+\item The referee sends r to Alice and c to Bob.\\
+\item Alice colors each of three cels in row r in a 3x3 grid either red or green, and sends this coloring to the referee.\\
+\item Bob colors each other three cells in column c in a 3x3 grid either red or green, and sends this coloring to the referee.\\
+\item The referee checks that Alice has colored red an even number of cells.\\
+\item The referee checks that Bob has colored red and odd number of cells.\\
+\item The referee checks that Alice and Bob have assigned the same color to the cell in row r and column c.\\
+\item If all of these checks succeed, then Alice and Bob win the game; otherwise they lose.\\
+\end{enumerate}
+Most notably: There is a quantum strategy by which Alice and Bob win the magic square game with certainty, but no such classical strategy.\\
+#+END_SRC
+
+** Mermin Pentagram :mermin_pentagram:
+
+The Mermin Pentagram has ten 3 Qubit Pauli Spin Gate Observables aranged in a Pentagram shape such that 4 Observables are on each edge. The Mermin Pentagram was used to demonstrate a violation of the no-go theorem.
+
+#+BEGIN_SRC latex :results output file link replace :file mermin_pentagram.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+For the game version of the Mermin Pentagram, Alice and Bob each receive a pentagram edge as a prompt from $\in \{1,2,3,4,5\}$. To win a round of the game, Alice and Bob should each respond with a series of four 0's and 1's assigned to the edge such that:
+\begin{enumerate}
+\item they assign the same bit to the common node of the intersection of the two edges
+\item Alice's four bits and Bob's four bits should each have an odd number of 0's (and so an odd number of 1's)
+\end{enumerate}
+#+END_SRC
+Like the other examples, the Mermin Pentagram has no classical strategy with a 100% success rate, but by sharing a qubit state, there is a guaranteed quantum strategy to win.
+*  Relating the two
+** Correlation Arrays describing Mermin Square and CHSH
+Correlation Arrays are used to describe how the statistics of multipartite systems are entangled through correlation polytopes. An interesting pattern emerges when one views the different correlation arrays of the CHSH game from a bipartite to tripartite setting: the CHSH correlation arrays are contained within the Mermin Square!\\
+#+BEGIN_SRC latex :results output file link replace :file correlation_arrays.png :buffer no :headers '("\\usepackage{tikz}" "\\usetikzlibrary{tikzmark}")
+CHSH Array 1:\\
+% top left
+\begin{matrix}
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\end{matrix}\\
+CHSH Array 2:\\
+% top right
+\begin{matrix}
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  0 & \frac{1}{2} & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+\end{matrix}\\
+CHSH Array 3:\\
+% bottom left
+\begin{matrix}
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & \frac{1}{2} & 0\\
+\end{matrix}\\
+CHSH Array 4:\\
+% bottom right
+\begin{matrix}
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+  \frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+  0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\end{matrix}\\
+
+\noindent The full tripartite correlation array, where the Mermin Square is any of a 9x9 grid, while a CSHS is any 4x4 grid:\\
+\begin{matrix}
+0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+\frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\frac{1}{2} & 0 & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2}\\
+0 & \frac{1}{2} & \frac{1}{2} & 0 & \frac{1}{2} & 0 & \frac{1}{2} & 0\\
+\end{matrix}\\
+Therefore 4 CHSH games are contained in one Mermin Square game, but only two CHSH games are needed to uniquely determine the Mermin Square.\\
+#+END_SRC
+The same is also true for the KCBS and Mermin Pentagram, where two KCBS are needed to uniquely determine the Mermin Pentagram contained. These coincidences were not enough proof for me of a definitive connection, but it was enough to convince me that a deeper relationship could exist, perhaps a monogamy of these games...
+** Monogamy Relationships
+By turning to graph theory, as shown in [1], one is able to see how each quantum game is represented in graph form. Here, the top graph, referred to as K3,3, represents the Mermin Peres Magic Square. It can be vetex decomposed in 4 different ways (simililiarly to the 4 CHSH correlation arrays found in one Mermin Square), such that it creates two subgraphs, representing the CHSH system.
+
+file:/home/ryan/Documents/blog/1/K33.png
+
+The same is also true for the Mermin Pentagram. It is more obvious to see how two pentagons, the KCBS Pentagram, can be found around the Pentagram, which is referred to as K5, represinging the Mermin Pentagram. It can also be any path given by 5 edges, of which there are 7 more unique versions.
+
+#+attr_html: :width 300px
+#+attr_latex: :width 300px
+[[file:/home/ryan/Documents/blog/1/pentagram_in_pentagon.png]]
+
+Moreover, there is a monogomy relationship between the KCBS Pentagram / CHSH and the Mermin Pentagram / Mermin Square, such that Alice and Bob of the Mermin Square / Mermin Pentagram each play different versions of the CHSH system / KCBS Pentagram together, where the outcome helps decide what moves to play to successfully win at the Mermin square / Mermin Pentagram. This makes sense as the CHSH system / KCBS pentagram is commonly represented in a GHZ / Werner state, which is the entangled state shared in the Mermin Square / Mermin Pentagram. The monogamy relationship says that two separate CHSH system / KCBS pentagram games can be represented as a single GHZ / Werner state to give enough information as to tell what Mermin Square / Mermin Pentagram configuration one has. Thus, while the Mermin Peres Magic Square and Mermin Pentagram are more complicated than the CHSH system and KCBS pentagram, we can work with these simpler models and see how they can apply to expand our knowledge of the complicated problems.
+# For next chapter
+# ** Temporal and Space analog between KCBS and Mermin Square
+# * Projective group relationship between Mermin Square and Mermin Pentagram
+* Conclusion
+This blog is my first attempt at getting things out of my head... I hope that by introducing these quantum objects, it is shown that these models have more than meets the eye, and that our very understanding of the principles governing quantum mechanics, nonlocality, contextuality, etc., rely on us underpinning the inner mechanisms governing them. I leave off with one last idea: relating the CSHS through the KCBS [2], such that the KCBS Pentagram contextuality measured through concurrence is algebraically related to the measure of nonlocality of the CHSH system. This would allow one to represent the outcome statistics of the CHSH game purely through a function of the states chosen of the KCBS Pentagram game! This even means that even the Mermin Pentagram Werner state held is enough to represent the GHZ state and win the Mermin Square game being played... if there was a hidden variable model describing both of them. As we have seen through the KCBS Pentagram and CHSH system, there is not... unless one is to modify the games to rely on sequential measurements instead of simultaneous measurements. But thats for the next blog. Until then - Ryan.
+
+* Next Up
+- Wreath products and how the Mermin Square and Mermin Pentagram relate to M24
+- 24-24 Mermin-Cabello system of converting nonlocality and contextuality
+- Introduce quantum codes
+- Explain supper-symmetry
+
+* References
+- [1] https://www.quantumlah.org/media/thesis/CQT_130315_RavishankarRamanathan.pdf
+
+- [2] https://arxiv.org/pdf/2309.12868

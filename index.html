@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-09-28 Sat 21:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org1bccdec">1. Table of Contents:</a></li>
+<li><a href="#org288a2ff">2. Introduction</a></li>
+<li><a href="#orgd208540">3. CHSH and KCBS Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="kcbs">kcbs</span>&#xa0;<span class=""></span>&#xa0;<span class="chsh">chsh</span></span></a>
+<ul>
+<li><a href="#orgaf01149">3.1. CHSH&#xa0;&#xa0;&#xa0;<span class="tag"><span class="chsh">chsh</span></span></a></li>
+<li><a href="#org3a1d5be">3.2. KCBS Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="kcbs">kcbs</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org14883e2">4. Mermin Square and Mermin Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_square">mermin_square</span>&#xa0;<span class=""></span>&#xa0;<span class="mermin_pentagram">mermin_pentagram</span></span></a>
+<ul>
+<li><a href="#org07caabf">4.1. Mermin Square&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_square">mermin_square</span></span></a></li>
+<li><a href="#orgbcfd759">4.2. Mermin Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_pentagram">mermin_pentagram</span></span></a></li>
+</ul>
+</li>
+<li><a href="#org575e771">5. Relating the two</a>
+<ul>
+<li><a href="#orgfee95dd">5.1. Correlation Arrays describing Mermin Square and CHSH</a></li>
+<li><a href="#org008849b">5.2. Monogamy Relationships</a></li>
+</ul>
+</li>
+<li><a href="#orga8a049a">6. Conclusion</a></li>
+<li><a href="#org68e67a3">7. Next Up</a></li>
+<li><a href="#org222f0fc">8. References</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1bccdec" class="outline-2">
+<h2 id="org1bccdec"><span class="section-number-2">1.</span> Table of Contents:</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Introduction</li>
+<li>CHSH and Mermin Square</li>
+<li>KCBS and Mermin Pentagram</li>
+<li>Relating the two</li>
+<li>Conclusion</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org288a2ff" class="outline-2">
+<h2 id="org288a2ff"><span class="section-number-2">2.</span> Introduction</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+The goal of this blog post is to provide an introduction to a few geometric quantum objects, demonstrate the ways in which they are analyzed and used, and elaborate on a relationship between them. The CHSH inequality&rsquo;s expectation values are defined explicitly to show nonlocality. The KCBS Pentagram and it&rsquo;s Kochen Specker act as a proof on demonstrating the no-go theorem. The Mermin Peres Magic Square Game and the Mermin Pentagram are briefly mentioned in explaining Hidden Variable theories, described through its connections with the previous three objects. This blog post is part 1 of 3 of a series describing the underpinnings of how the Mermin Square and Mermin Pentagram are related through the group M24. For this blog post I will only establish the objects at hand and the relationships between them.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd208540" class="outline-2">
+<h2 id="orgd208540"><span class="section-number-2">3.</span> CHSH and KCBS Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="kcbs">kcbs</span>&#xa0;<span class=""></span>&#xa0;<span class="chsh">chsh</span></span></h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgaf01149" class="outline-3">
+<h3 id="orgaf01149"><span class="section-number-3">3.1.</span> CHSH&#xa0;&#xa0;&#xa0;<span class="tag"><span class="chsh">chsh</span></span></h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+The CHSH inequality is used to perform a Bell test, showing that the behaviour of entangled quantum systems is incompatible with local hidden variables, or that quantum mechanics really is random. Here we look at how expectation values differ when considering a classical versus quantum system, and that classical values can be exceeded with the use of quantum entanglement.
+</p>
+
+<div id="orgc0bd499" class="figure">
+<p><img src="chsh.png" alt="chsh.png" />
+</p>
+</div>
+
+<p>
+The CHSH is used as a signature of quantum nonlocality, whenever the expectation value exceeds 2 for a bipartite system, there is quantum entanglement across different objects at hand. In fact, the maximum expectation quantum value for a bipartite system, known as the Tsierlion Bound, is the quantum expectation value given by the CHSH experiment.
+</p>
+</div>
+</div>
+<div id="outline-container-org3a1d5be" class="outline-3">
+<h3 id="org3a1d5be"><span class="section-number-3">3.2.</span> KCBS Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="kcbs">kcbs</span></span></h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+The KCBS Pentagram is defined on a pentagon (or on the outer points of a pentagram) containing a 3 qubit pauli spin gate observable at each vetex. Here I describe a Kochen Specker configuration of the KCBS pentagram: it&rsquo;s goal is to show that quantum mechanics is inherently contextual; that is that one can not reliably describe measurement outcomes by their operator, or that one must choose a common basis of operators (context) of which to describe quantum theory. For the Kochen Specker example of the KCBS Pentagram, each co-measureable spin from a chain represents one of the vertices of the pentagon. The full set of co-measurable spins from each chain is necessary to demonstate the existence (or lack thereof) of a Hidden Variable model independent of a chosen basis.
+</p>
+
+<div id="orgf193d77" class="figure">
+<p><img src="kcbs.png" alt="kcbs.png" />
+</p>
+</div>
+
+
+<div id="org5470255" class="figure">
+<p><img src="kcbs_2.png" alt="kcbs_2.png" />
+</p>
+</div>
+
+
+<div id="org95f49c3" class="figure">
+<p><img src="kcbs_3.png" alt="kcbs_3.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org14883e2" class="outline-2">
+<h2 id="org14883e2"><span class="section-number-2">4.</span> Mermin Square and Mermin Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_square">mermin_square</span>&#xa0;<span class=""></span>&#xa0;<span class="mermin_pentagram">mermin_pentagram</span></span></h2>
+<div class="outline-text-2" id="text-4">
+<p>
+There is much to explore about the Mermin Square and Mermin Pentagram &#x2013; for now I will briefly mention them for the first blog &#x2013; they will become vital later.
+</p>
+</div>
+<div id="outline-container-org07caabf" class="outline-3">
+<h3 id="org07caabf"><span class="section-number-3">4.1.</span> Mermin Square&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_square">mermin_square</span></span></h3>
+<div class="outline-text-3" id="text-4-1">
+
+<div id="orgb95029c" class="figure">
+<p><img src="mermin_square.png" alt="mermin_square.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbcfd759" class="outline-3">
+<h3 id="orgbcfd759"><span class="section-number-3">4.2.</span> Mermin Pentagram&#xa0;&#xa0;&#xa0;<span class="tag"><span class="mermin_pentagram">mermin_pentagram</span></span></h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+The Mermin Pentagram has ten 3 Qubit Pauli Spin Gate Observables aranged in a Pentagram shape such that 4 Observables are on each edge. The Mermin Pentagram was used to demonstrate a violation of the no-go theorem.
+</p>
+
+
+<div id="org46fd396" class="figure">
+<p><img src="mermin_pentagram.png" alt="mermin_pentagram.png" />
+</p>
+</div>
+
+<p>
+Like the other examples, the Mermin Pentagram has no classical strategy with a 100% success rate, but by sharing a qubit state, there is a guaranteed quantum strategy to win.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org575e771" class="outline-2">
+<h2 id="org575e771"><span class="section-number-2">5.</span> Relating the two</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgfee95dd" class="outline-3">
+<h3 id="orgfee95dd"><span class="section-number-3">5.1.</span> Correlation Arrays describing Mermin Square and CHSH</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+Correlation Arrays are used to describe how the statistics of multipartite systems are entangled through correlation polytopes. An interesting pattern emerges when one views the different correlation arrays of the CHSH game from a bipartite to tripartite setting: the CHSH correlation arrays are contained within the Mermin Square!<br />
+</p>
+
+<div id="org6abcfe5" class="figure">
+<p><img src="correlation_arrays.png" alt="correlation_arrays.png" />
+</p>
+</div>
+
+<p>
+The same is also true for the KCBS and Mermin Pentagram, where two KCBS are needed to uniquely determine the Mermin Pentagram contained. These coincidences were not enough proof for me of a definitive connection, but it was enough to convince me that a deeper relationship could exist, perhaps a monogamy of these games&#x2026;
+</p>
+</div>
+</div>
+<div id="outline-container-org008849b" class="outline-3">
+<h3 id="org008849b"><span class="section-number-3">5.2.</span> Monogamy Relationships</h3>
+<div class="outline-text-3" id="text-5-2">
+<p>
+By turning to graph theory, as shown in [1], one is able to see how each quantum game is represented in graph form. Here, the top graph, referred to as K3,3, represents the Mermin Peres Magic Square. It can be vetex decomposed in 4 different ways (simililiarly to the 4 CHSH correlation arrays found in one Mermin Square), such that it creates two subgraphs, representing the CHSH system.
+</p>
+
+
+<div id="org4f27641" class="figure">
+<p><img src="file:///home/ryan/Documents/blog/1/K33.png" alt="K33.png" />
+</p>
+</div>
+
+<p>
+The same is also true for the Mermin Pentagram. It is more obvious to see how two pentagons, the KCBS Pentagram, can be found around the Pentagram, which is referred to as K5, represinging the Mermin Pentagram. It can also be any path given by 5 edges, of which there are 7 more unique versions.
+</p>
+
+
+<div id="orgd4a157d" class="figure">
+<p><img src="file:///home/ryan/Documents/blog/1/pentagram_in_pentagon.png" alt="pentagram_in_pentagon.png" width="300px" />
+</p>
+</div>
+
+<p>
+Moreover, there is a monogomy relationship between the KCBS Pentagram / CHSH and the Mermin Pentagram / Mermin Square, such that Alice and Bob of the Mermin Square / Mermin Pentagram each play different versions of the CHSH system / KCBS Pentagram together, where the outcome helps decide what moves to play to successfully win at the Mermin square / Mermin Pentagram. This makes sense as the CHSH system / KCBS pentagram is commonly represented in a GHZ / Werner state, which is the entangled state shared in the Mermin Square / Mermin Pentagram. The monogamy relationship says that two separate CHSH system / KCBS pentagram games can be represented as a single GHZ / Werner state to give enough information as to tell what Mermin Square / Mermin Pentagram configuration one has. Thus, while the Mermin Peres Magic Square and Mermin Pentagram are more complicated than the CHSH system and KCBS pentagram, we can work with these simpler models and see how they can apply to expand our knowledge of the complicated problems.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orga8a049a" class="outline-2">
+<h2 id="orga8a049a"><span class="section-number-2">6.</span> Conclusion</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+This blog is my first attempt at getting things out of my head&#x2026; I hope that by introducing these quantum objects, it is shown that these models have more than meets the eye, and that our very understanding of the principles governing quantum mechanics, nonlocality, contextuality, etc., rely on us underpinning the inner mechanisms governing them. I leave off with one last idea: relating the CSHS through the KCBS [2], such that the KCBS Pentagram contextuality measured through concurrence is algebraically related to the measure of nonlocality of the CHSH system. This would allow one to represent the outcome statistics of the CHSH game purely through a function of the states chosen of the KCBS Pentagram game! This even means that even the Mermin Pentagram Werner state held is enough to represent the GHZ state and win the Mermin Square game being played&#x2026; if there was a hidden variable model describing both of them. As we have seen through the KCBS Pentagram and CHSH system, there is not&#x2026; unless one is to modify the games to rely on sequential measurements instead of simultaneous measurements. But thats for the next blog. Until then - Ryan.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org68e67a3" class="outline-2">
+<h2 id="org68e67a3"><span class="section-number-2">7.</span> Next Up</h2>
+<div class="outline-text-2" id="text-7">
+<ul class="org-ul">
+<li>Wreath products and how the Mermin Square and Mermin Pentagram relate to M24</li>
+<li>24-24 Mermin-Cabello system of converting nonlocality and contextuality</li>
+<li>Introduce quantum codes</li>
+<li>Explain supper-symmetry</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org222f0fc" class="outline-2">
+<h2 id="org222f0fc"><span class="section-number-2">8.</span> References</h2>
+<div class="outline-text-2" id="text-8">
+<ul class="org-ul">
+<li>[1] <a href="https://www.quantumlah.org/media/thesis/CQT_130315_RavishankarRamanathan.pdf">https://www.quantumlah.org/media/thesis/CQT_130315_RavishankarRamanathan.pdf</a></li>
+
+<li>[2] <a href="https://arxiv.org/pdf/2309.12868">https://arxiv.org/pdf/2309.12868</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2024-09-28 Sat 21:23</p>
+</div>
+</body>
+</html>
